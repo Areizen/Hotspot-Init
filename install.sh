@@ -10,7 +10,7 @@ echo -e '\033[0;32m Numéro de canal (1-13) :\033[0m'
 read AP_CHANNEL
 read -p "Entrez le nom du réseau WIFI que vous voulez créer : " AP_SSID
 read  -s -p "Entrez le mot de passe de votre réseau :" AP_PASS
-if[ `echo $AP_PASS | wc -c` -lt 8] || [`echo $AP_PASS` -gt 63 `];then
+if[ `echo $AP_PASS | wc -c` -lt 8] || [`echo $AP_PASS` -gt 63 ];then
   echo "La taille de votre mot de passe n'est pas adaptée"
   exit 1
 fi
