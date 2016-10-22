@@ -6,12 +6,12 @@ echo -e '\033[0;31m Mise en place du Hotspot via le script de Raspberry-at-Home 
 ifconfig wlan0 up
 run_time=`date +%Y%m%d%H%M`
 log_file="ap_setup_log.${run_time}"
-echo -e '\033[0;32m] Numéro de canal (1-13) :'
+echo -e '\033[0;32m Numéro de canal (1-13) :\033[0m'
 read AP_CHANNEL
 echo "Updating repositories ... "
 apt-get update
-read -p "Entrez le nom du réseau WIFI que vous voulez créer :\n" AP_SSID
-read  -s -p "Entrez le mot de passe de votre réseau :\n" AP_PASS
+read -p "Entrez le nom du réseau WIFI que vous voulez créer : " AP_SSID
+read  -s -p "Entrez le mot de passe de votre réseau :" AP_PASS
 if[ `echo $AP_PASS | wc -c` -lt 8] || [`echo $AP_PASS` -gt 63 `];then
   echo "La taille de votre mot de passe n'est pas adaptée"
   exit 1
@@ -56,7 +56,7 @@ fi
 AP_ADDRESS=`echo ${NETWORK} | tr \"X\" \"1\"`
 AP_UPPER_ADDR=`echo ${NETWORK} | tr \"X\" \"9\"`
 AP_LOWER_ADDR=`echo ${NETWORK} | tr \"X\" \"2\"`
-SUBNET=`echo ${NETWORK} | tr \"X\" \"0\"`e
+SUBNET=`echo ${NETWORK} | tr \"X\" \"0\"`
 
 echo ""
 echo ""
