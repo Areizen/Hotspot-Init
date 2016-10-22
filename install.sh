@@ -10,9 +10,9 @@ echo -e '\033[0;32m] Numéro de canal (1-13) :'
 read AP_CHANNEL
 echo "Updating repositories ... "
 apt-get update
-read -p "Entrez le nom du réseau WIFI que vous voulez créer" AP_SSID
-read  -s -p "Entrez le mot de passe de votre réseau" AP_PASS
-if[ `echo $AP_PASS | wc -c` -lt 8] || [`echo $AP_PASS` -gt 63 ];then
+read -p "Entrez le nom du réseau WIFI que vous voulez créer :\n" AP_SSID
+read  -s -p "Entrez le mot de passe de votre réseau :\n" AP_PASS
+if[ `echo $AP_PASS | wc -c` -lt 8] || [`echo $AP_PASS` -gt 63 `];then
   echo "La taille de votre mot de passe n'est pas adaptée"
   exit 1
 fi
