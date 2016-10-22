@@ -8,8 +8,6 @@ run_time=`date +%Y%m%d%H%M`
 log_file="ap_setup_log.${run_time}"
 echo -e '\033[0;32m Numéro de canal (1-13) :\033[0m'
 read AP_CHANNEL
-echo "Updating repositories ... "
-apt-get update
 read -p "Entrez le nom du réseau WIFI que vous voulez créer : " AP_SSID
 read  -s -p "Entrez le mot de passe de votre réseau :" AP_PASS
 if[ `echo $AP_PASS | wc -c` -lt 8] || [`echo $AP_PASS` -gt 63 `];then
